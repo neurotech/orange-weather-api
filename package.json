@@ -1,0 +1,26 @@
+{
+  "name": "orange-weather-api",
+  "version": "1.0.0",
+  "description": "A Node.js powered application that serves weather forecast data for Orange, NSW as JSON over HTTP.",
+  "main": "app.js",
+  "dependencies": {
+    "date-fns": "1.28.5",
+    "ftp": "0.3.10",
+    "get-uri": "2.0.1",
+    "lowdb": "0.17.1",
+    "node-schedule": "1.2.4",
+    "xml2js": "0.4.18"
+  },
+  "devDependencies": {
+    "semistandard": "11.0.0"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neurotech/orange-weather-api.git"
+  },
+  "author": "Tim Douglas",
+  "license": "ISC"
+}
