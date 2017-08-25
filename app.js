@@ -12,9 +12,10 @@ db.defaults({ forecast: [], lastUpdated: {} }).write();
 // Start a simple HTTP server to serve forecast data as JSON
 log('Starting HTTP server...');
 http.createServer((request, response) => {
+  response.setHeader('Access-Control-Allow-Origin', '*');
   if (request.url === '/') {
     var forecasts = {
-      lastUpdated: db.get('lastUpdated.date').value(),
+      lastUpdated: db.get('lastUpdated').value(),
       forecasts: db.get('forecast').value()
     };
     response.writeHead(200, { 'Content-Type': 'application/json' });

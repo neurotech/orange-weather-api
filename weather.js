@@ -40,8 +40,10 @@ module.exports = {
             // Filter the parsed XML to only return forecast data for Orange
             var blob = result.product.forecast[0].area;
             var orange = blob.filter((items) => { return items.description[0] === 'Orange'; });
-            // Update the DB's lastUpdated date
+            // Update the DB's lastUpdated dates
             db.set('lastUpdated.date', date.format(new Date(), 'YYYY-MM-DDTHH:mm:ss')).write();
+            db.set('lastUpdated.prettyDate', date.format(new Date(), 'dddd Do MMMM YYYY')).write();
+            db.set('lastUpdated.prettyTime', date.format(new Date(), 'hh:mm A')).write();
             // Pass the filtered forecast data to translate()
             log(`Transforming XML...`);
             translate(orange[0]['forecast-period'], (res) => {
