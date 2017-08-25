@@ -12,7 +12,7 @@ db.defaults({ forecast: [], lastUpdated: {} }).write();
 // Start a simple HTTP server to serve forecast data as JSON
 log('Starting HTTP server...');
 http.createServer((request, response) => {
-  if (request.url === '/orange') {
+  if (request.url === '/') {
     var forecasts = {
       lastUpdated: db.get('lastUpdated.date').value(),
       forecasts: db.get('forecast').value()
