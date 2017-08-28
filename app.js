@@ -24,7 +24,7 @@ http.createServer((request, response) => {
     response.writeHead(404, {'Content-Type': 'text/plain'});
     response.end('404 Not Found\n', 'utf-8');
   }
-}).listen(3000);
+}).listen(process.env.PORT || 3000);
 
 // Schedule weather.get() to run every hour at 15 minutes past
 schedule.scheduleJob(everyHour, () => {
