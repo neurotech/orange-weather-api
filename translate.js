@@ -27,7 +27,6 @@ let dataHandler = (text, element) => {
     summary: '',
     rainChance: '',
     rainfall: '0 mm',
-    uv: '',
     temperatures: {
       min: '',
       max: '',
@@ -40,7 +39,6 @@ let dataHandler = (text, element) => {
     if (text[t].type[0] === 'precis') values.precise = text[t]._;
     if (text[t].type[0] === 'forecast') values.summary = text[t]._;
     if (text[t].type[0] === 'probability_of_precipitation') values.rainChance = text[t]._.replace(/%/g, '');
-    if (text[t].type[0] === 'uv_alert') values.uv = text[t]._;
   }
 
   // Iterate over the 'element' array and update appropriate keys in the values object.
