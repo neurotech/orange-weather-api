@@ -4,7 +4,7 @@ const weather = require('./weather');
 const db = require('./db');
 const log = require('./log');
 
-let everyHour = `15 * * * *`;
+let timetable = `0,15,30,45 * * * *`;
 
 // Setup DB schema
 db.defaults({ forecast: [], lastUpdated: {} }).write();
@@ -26,8 +26,8 @@ http.createServer((request, response) => {
   }
 }).listen(process.env.PORT || 3000);
 
-// Schedule weather.get() to run every hour at 15 minutes past
-schedule.scheduleJob(everyHour, () => {
+// Schedule weather.get() to run every 15 minutes
+schedule.scheduleJob(timetable, () => {
   weather.get((err, res) => {
     if (err) throw err;
     log(`Updated DB with ${res} days of forecast data.`);
