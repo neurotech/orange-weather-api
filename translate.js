@@ -2,21 +2,21 @@ const date = require('date-fns');
 
 let niceDate = 'dddd Do MMMM YYYY';
 let icons = {
-  '1': 'Sunny',
-  '2': 'Clear',
-  '3': 'Partly cloudy',
-  '4': 'Cloudy',
-  '6': 'Hazy',
-  '8': 'Light rain',
-  '9': 'Windy',
-  '10': 'Fog',
-  '11': 'Shower',
-  '12': 'Rain',
-  '13': 'Dusty',
-  '14': 'Frost',
-  '15': 'Snow',
-  '16': 'Storm',
-  '17': 'Light shower'
+  '1': 'sunny',
+  '2': 'clear',
+  '3': 'partly_cloudy',
+  '4': 'cloudy',
+  '6': 'hazy',
+  '8': 'light_rain',
+  '9': 'windy',
+  '10': 'fog',
+  '11': 'shower',
+  '12': 'rain',
+  '13': 'dusty',
+  '14': 'frost',
+  '15': 'snow',
+  '16': 'storm',
+  '17': 'light_rain'
 };
 
 let dataHandler = (text, element) => {
